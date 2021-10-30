@@ -1,0 +1,22 @@
+<template>
+<lightning-card>
+<div class=" slds-grid slds-m-around_medium">
+<div class="slds-col slds-size_1-of-3">
+<lightning-combobox label="Industry" value={value} options={industryDisplayValues} onchange={searchIndustryKeyword}></lightning-combobox>
+</div>
+<div class="slds-form-element slds-col slds-size_1-of-3 slds-m-left_medium">
+<div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+<lightning-icon size="x-small" class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" icon-name="utility:search" style="padding-top:10px"></lightning-icon>
+<lightning-input type="text" value={accNameSearchValue} label="Account Name" onchange={searchNameKeyword} placeholder="Type Account Name" icon-name="utility:search"></lightning-input>
+</div>
+</div>
+<div class="slds-col slds-size_1-of-3 slds-m-around_large">
+<lightning-button label="Search" onclick={handleSearchKeyword} variant="brand"></lightning-button>
+</div>
+</div>
+</lightning-card>
+<c-account-list accountsrecord={accountsRecord} onselected={handleEditFromChild}></c-account-list>
+<template if:true={customformmodal}>
+<c-account-edit-modal customformmodal ={customformmodal} recordid={recordid}  onsuccessevent={handleSuccess} oncustomhidemodalpopup ={customHideModalPopup}></c-account-edit-modal>
+</template> 
+</template>

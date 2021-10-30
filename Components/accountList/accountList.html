@@ -1,0 +1,32 @@
+<template>
+<template for:each={accountsrecord} for:item="acc">
+  <article key={acc.Id} class="slds-card slds-m-vertical_medium">
+  <div class="slds-card__header slds-grid">
+  <header class="slds-media slds-media_center slds-has-flexi-truncate">
+  <div class="slds-media__figure slds-p-around_x-small">
+  <img src={industryImg} alt="static" style="border-radius:50%;height:210px;width:210px"/>
+  </div>
+  <div class="slds-media__body">
+  <p key={acc.Id} class="slds-text-heading_large slds-p-horizontal_medium slds-p-bottom_small" style="color: #5679C0;">{acc.Name}</p>
+  <p key={acc.Id} class="slds-p-horizontal_medium" >
+  <span><lightning-icon size="x-small" class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" icon-name="utility:call"></lightning-icon></span>
+  <span style="font-weight: bold;">Phone : </span>{acc.Phone}</p>
+  <p key={acc.Id} class="slds-p-horizontal_medium">
+  <span><lightning-icon size="x-small" class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" icon-name="utility:company"></lightning-icon></span>
+  <span style="font-weight: bold;">Industry : </span>{acc.Industry}</p>
+  <p key={acc.Id} class="slds-p-horizontal_medium">
+  <span><lightning-icon size="x-small" class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" icon-name="utility:money"></lightning-icon></span>
+  <span style="font-weight: bold;">AnnualRevenue : </span>{acc.AnnualRevenue}</p>
+  <p key={acc.Id} class="slds-p-horizontal_medium">
+  <span><lightning-icon size="x-small" class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" icon-name="utility:link"></lightning-icon></span>
+  <span style="font-weight: bold;">Website : </span>{acc.Website}</p>
+</div>
+<div class="slds-no-flex">
+<button class="slds-button slds-button_neutral" value={acc.Id} onclick={customShowModalPopup} >Edit</button>
+</div>
+</header>
+</div>
+</article>
+</template>
+<!--<c-account-edit-modal customformmodal ={customFormModal} recordid={recordid}></c-account-edit-modal>-->
+</template>
